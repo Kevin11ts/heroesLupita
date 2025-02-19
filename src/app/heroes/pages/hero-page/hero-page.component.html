@@ -1,0 +1,36 @@
+<mat-card class="hero-card" *ngIf="hero">
+    <mat-card-header>
+      <mat-card-title>{{ hero.superhero }}</mat-card-title>
+      <mat-card-subtitle>{{ hero.alter_ego }}</mat-card-subtitle>
+    </mat-card-header>
+  
+    <img mat-card-image [src]="hero | heroImage" [alt]="hero.superhero" class="hero-image">
+  
+    <mat-card-content class="hero-content">
+      <h5>{{ hero.publisher }}</h5>
+      <p>
+        <strong>Primera aparición:</strong> {{ hero.first_appearance }}
+        <br>
+        <strong>Personajes:</strong> {{ hero.characters }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  
+  <style>
+    .hero-card {
+      max-width: 600px; /* Ajusta el ancho de la tarjeta */
+      margin: auto; /* Centra la tarjeta */
+      text-align: center;
+    }
+  
+    .hero-image {
+      max-height: 400px; /* Limita la altura de la imagen */
+      object-fit: cover; /* Recorta la imagen en lugar de deformarla */
+      width: 100%; /* Se adapta al ancho de la tarjeta */
+    }
+  
+    .hero-content {
+      padding: 16px;
+    }
+  </style>
+  
